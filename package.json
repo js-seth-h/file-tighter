@@ -1,0 +1,41 @@
+{
+  "name": "file-tighter",
+  "version": "1.0.0",
+  "description": "remove file or reduce file size by zip, for getting free disk space.",
+  "main": "lib",
+  "scripts": {
+    "build": "coffee -c -b -o lib src  ",
+    "clean": "rm -r lib",
+    "prepublish": "npm run-script build",
+    "postpublish": "npm run-script clean",
+    "test": "jasmine-node --coffee  --verbose spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/js-seth-h/file-tighter.git"
+  },
+  "keywords": [
+    "web",
+    "connect",
+    "middleware",
+    "flow",
+    "rack",
+    "async",
+    "next"
+  ],
+  "author": "js.seth.h@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/js-seth-h/file-tighter/issues"
+  },
+  "homepage": "https://github.com/js-seth-h/file-tighter",
+  "dependencies": {
+    "ficent": "^3.0.0",
+    "glob": "^7.1.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1"
+  }
+}
