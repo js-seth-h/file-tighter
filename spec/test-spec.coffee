@@ -22,6 +22,15 @@ describe 'tighter', ()->
   it 'dev', (done)-> 
     tighter = new Tighter
       target :  ['./log/*', './log/*.txt']
+      fs_stats: on
+
+    tighter.decidePolicy = (file_info)-> 
+      policy = 'pass'
+      file_path = file_info.path
+      stats = file_info.stats
+      # console.log 'file_info.stats', file_info.stats
+      # console.log 'ctime', file_info.stats.ctime
+      return policy
 
     tighter.doTight (err)->
       console.log err if err 

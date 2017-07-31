@@ -1,6 +1,6 @@
 {
   "name": "file-tighter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "remove file or reduce file size by zip, for getting free disk space.",
   "main": "lib",
   "scripts": {
