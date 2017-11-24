@@ -1,42 +1,11 @@
 _ = require 'lodash'
 glob = require 'glob'
-ficent = require 'ficent'
-# moment = require 'moment'
+{ficent} = require 'ficent'
 
 path = require 'path'
 fs = require 'fs' 
 zlib = require 'zlib'
-
-# deleteFiles = (callback)->
-#   log_file_pattern = './log/*.txt'
-#   (ficent [
-#     (_toss)-> 
-#       glob log_file_pattern, {nodir: true}, _toss.storeArgs 'files'
-#     (_toss)->
-#       {files} = _toss.vars()
-#       log.debug 'log files', files
-
-#       _delete_file = ficent [
-#         (filepath, _toss)->
-#           filename = path.basename filepath
-
-#           mmt_std = moment().add(-7, 'days').startOf('day')
-
-#           toks = _.split filename, '-'
-#           date = _.first toks
-#           log.debug 'date =', date
-#           if moment(date, 'YYYYMMDD').isBefore mmt_std
-#             log.debug 'delete file', filepath
-#             fs.unlink filepath, _toss
-#           else
-#             _toss null
-#       ]
-
-#       args_list = _.map files, (f)-> [f]
-#       # _toss null
-#       ficent.ser(_delete_file) args_list, _toss
-#   ]) callback  
-
+ 
 ###
   new FileTighter
     target: '*.log' or  ["*.log", '*.txt'] - glob pattern, single or array 
@@ -75,6 +44,7 @@ class FileTighter
     # console.log 'doTight', opt
 
     file_infos = null
+    
     (ficent [
       (_toss)->
         # console.log 'opt.target=', opt.target

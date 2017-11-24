@@ -1,6 +1,6 @@
 {
   "name": "file-tighter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "remove file or reduce file size by zip, for getting free disk space.",
   "main": "lib",
   "scripts": {
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/js-seth-h/file-tighter",
   "dependencies": {
-    "ficent": "^3.0.0",
+    "ficent": "^4.0.1",
     "glob": "^7.1.2",
     "lodash": "^4.17.4"
   },
